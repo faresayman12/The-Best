@@ -1,18 +1,15 @@
-// حفظ مكان التمرير السابق
-let prevScrollpos = window.pageYOffset; 
+let prevScrollpos = window.pageYOffset;
+let navbar = document.getElementById("navbar");
 
-// استرجاع العنصر الذي يمثل الـ navbar
-let navbar = document.getElementById("navbar"); 
-
-// تحديد حدث التمرير (scroll)
 window.onscroll = function() {
-    let currentScrollPos = window.pageYOffset; // الحصول على مكان التمرير الحالي
+    let currentScrollPos = window.pageYOffset;
 
-    // التحقق إذا كان التمرير للأسفل أو للأعلى
     if (prevScrollpos > currentScrollPos) {
-        navbar.style.top = "0"; // إظهار الـ navbar عند التمرير للأعلى
+        navbar.style.top = "0";
+        navbar.classList.remove("hidden");
     } else {
-        navbar.style.top = "-80px"; // إخفاء الـ navbar عند التمرير للأسفل
+        navbar.style.top = "-80px";
+        navbar.classList.add("hidden");
     }
-    prevScrollpos = currentScrollPos; // تحديث مكان التمرير السابق
-}
+    prevScrollpos = currentScrollPos;
+};
