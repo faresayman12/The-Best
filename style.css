@@ -19,18 +19,36 @@ a {
     color: inherit;
 }
 
-/* Header Section */
+/* لعرض navbar في أعلى الصفحة */
+/* تنسيقات الـ navbar */
 header {
+    position: sticky; 
+    top: 0; 
     background-color: #f0f0f0;
-    width: 100%;
-    position: fixed;
-    z-index: 999;
-    top: 0;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 999;
+    transition: top 0.3s ease-in-out; /* تأثير الانتقال عند إخفاء أو إظهار الـ navbar */
 }
+
+/* إخفاء الـ navbar عند التمرير للأسفل */
+header.hidden {
+    top: -80px; /* أخفيه عن طريق تحريكه للأعلى */
+}
+
+.navigation a {
+    font-size: 1.1em;
+    margin: 0 15px;
+    padding: 5px 10px;
+    color: #3a6cf4;
+}
+
+.navigation a:hover {
+    color: #601cfc;
+}
+
 
 .logo {
     color: #3a6cf4;
@@ -38,38 +56,6 @@ header {
     font-weight: 700;
 }
 
-.navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.navigation a {
-    color: #3a6cf4;
-    font-size: 1.1em;
-    margin: 0 15px;
-    padding: 5px 10px;
-}
-
-.navigation a:hover {
-    color: #601cfc;
-}
-
-/* Right-side links (Facebook, Whatsapp) */
-.right-links {
-    display: flex;
-    align-items: center;
-}
-
-.right-links a {
-    color: #3a6cf4;
-    font-size: 1.1em;
-    margin-left: 15px;
-}
-
-.right-links a:hover {
-    color: #601cfc;
-}
 
 /* Sections (Rental Products & Works) */
 .projects {
